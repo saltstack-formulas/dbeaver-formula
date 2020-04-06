@@ -39,6 +39,7 @@ Windows:
 MacOS:
   rootuser: {{ macos_rootuser | d('') }}
   rootgroup: {{ macos_rootgroup | d('') }}
+  environ_file: /etc/defaults/dbeaver.sh
   pkg:
     name: dbeaver-community   # brew cask name
     archive:

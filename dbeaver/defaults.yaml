@@ -8,6 +8,10 @@ dbeaver:
   dir:
     tmp: /tmp/dbeaver
     archive: /usr/local
+  config: {}
+  environ:
+    - dummy=dummy
+  environ_file: /etc/default/dbeaver.sh
   pkg:
     name: dbeaver-ce
     use_upstream_repo: false
@@ -25,7 +29,7 @@ dbeaver:
       source_hash: adfee928e9637e1522586ae6adf11d680e8f82a31db7cb4a2fb13c9bf49ee55c
       enforce_toplevel: false
       trim_output: true
-      options: '--strip-components=1'
+      options: '--strip-components=2'
   retry_option:
     # https://docs.saltstack.com/en/latest/ref/states/requisites.html#retrying-states
     attempts: 3

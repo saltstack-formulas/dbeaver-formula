@@ -9,10 +9,11 @@ include:
              {%- if grains.os_family in ('MacOS',) %}
   -{{ ' .macapp.clean' if p.use_upstream_macapp else ' .archive.clean' if p.use_upstream_archive else ' .package.clean' }}
 
-             {%- elif grains.os_family == 'Windows' or p.use_upstream_archive %}
-  - .archive
+             {%- elif p.use_upstream_archive %}
+  - .archive.clean
+  - .config.clean
 
              {%- else %}
-  - .package
+  - .package.clean
 
              {%- endif %}
