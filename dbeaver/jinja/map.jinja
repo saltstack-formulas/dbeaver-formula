@@ -24,6 +24,6 @@
 
 {%- if dbeaver['pkg']['use_upstream_archive'] %}
     {%- set dir = '%s-%s-%s'|format(dbeaver.pkg.name, dbeaver.version, dbeaver.pkg.archive.tag) %}
-    {%- do dbeaver.pkg.archive.update({'name': dbeaver.dir.archive + '/' + dir, 
-           'source': '%s/%s.%s.%s'|format(dbeaver.pkg.macapp.uri, dir, grains.osarch, dbeaver.suffix)}) %}
+    {%- do dbeaver.pkg.archive.update({'name': dbeaver.dir.archive + '/' + dir,
+           'source': '%s/%s.%s.%s'|format(dbeaver.pkg.macapp.uri, dir, grains.osarch, dbeaver.pkg.suffix)}) %}
 {%- endif %}

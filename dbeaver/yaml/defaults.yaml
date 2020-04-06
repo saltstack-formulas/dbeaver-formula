@@ -7,7 +7,7 @@ dbeaver:
   rootgroup: root
   dir:
     tmp: /tmp/dbeaver
-    binary: /usr/local
+    archive: /usr/local
   pkg:
     name: dbeaver-ce
     use_upstream_repo: false

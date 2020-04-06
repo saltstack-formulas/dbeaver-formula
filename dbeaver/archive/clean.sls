@@ -2,7 +2,7 @@
 # vim: ft=sls
 
 {%- set tplroot = tpldir.split('/')[0] %}
-{%- from tplroot ~ "/map.jinja" import dbeaver with context %}
+{%- from tplroot ~ "/jinja/map.jinja" import dbeaver with context %}
 
 dbeaver-cli-package-archive-clean-file-absent:
   file.absent:
