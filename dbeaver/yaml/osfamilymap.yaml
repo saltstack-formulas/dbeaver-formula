@@ -1,0 +1,49 @@
+# -*- coding: utf-8 -*-
+# vim: ft=yaml
+#
+# Setup variables using grains['os_family'] based logic.
+# You just need to add the key:values for an `os_family` that differ
+# from `defaults.yaml`.
+# Only add an `os_family` which is/will be supported by the formula
+#
+# If you do not need to provide defaults via the `os_family` grain,
+# you will need to provide at least an empty dict in this file, e.g.
+# osfamilymap: {}
+---
+{%- if grains.os == 'MacOS' %}
+    {%- set macos_rootuser = salt['cmd.run']("stat -f '%Su' /dev/console") %}
+    {%- set macos_rootgroup = salt['cmd.run']("stat -f '%Sg' /dev/console") %}
+{%- endif %}
+
+            {%- if 'oscodename' in grains %}
+Debian:
+  pkg:
+    use_upstream_repo: True
+    repo:
+      humanname: DBeaver Repository for Debian
+      # TODO:  ppa: ppa:serge-rider/dbeaver-ce
+      # TOCHECK: deb https://dbeaver.io/debs/dbeaver-ce /
+      name: deb https://dbeaver.io/debs/dbeaver-ce {{ grains.oscodename }} main
+      dist: {{ grains['oscodename'] }}
+      file: /etc/apt/sources.list.d/dbeaver.list
+      key_url: https://dbeaver.io/debs/dbeaver.gpg.key
+      keyserver: keyserver.ubuntu.com
+            {%- endif %}
+
+Windows:
+  pkg:
+    archive:
+      tag: '-win32.win32'
+      source_hash: 25fae15fb6ec16c9e4b29ff1afb95a1757a9a849da1c47bb1e55337c05580430
+
+MacOS:
+  rootuser: {{ macos_rootuser | d('') }}
+  rootgroup: {{ macos_rootgroup | d('') }}
+  pkg:
+    name: dbeaver-community   # brew cask name
+    archive:
+      source_hash: 49230c1fcae85b0c058155798fd5f4d771e9b8a53080713494bdd295d962e310 
+      tag: '-macosx.cocoa'
+    macapp:    # dbeaver-ce-VERSION-macos.dmg
+      source_hash: 9a2d0c0547e6b11468aec067cb33ee4c19b2fa2a5b2d637f11cd7b291a70fa92
+      tag: '-macos'
