@@ -22,7 +22,7 @@ dbeaver-package-install-cmd-run-cask:
     - name: brew cask install {{ dbeaver.pkg.name }}
     - onlyif: test -x /usr/local/bin/brew
 
-    {%- elif grains.kernel| lower == 'linux' %}
+    {%- elif grains.kernel|lower == 'linux' %}
 
 dbeaver-package-install-cmd-run-snap:
   cmd.run:

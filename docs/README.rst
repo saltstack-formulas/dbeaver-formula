@@ -60,10 +60,10 @@ starts the associated dbeaver service.
 
 This state will install DBeaver package on MacOS (homebrew), Debian (repo) and GNU/Linux (snap).
 
-``dbeaver.binary``
+``dbeaver.archive``
 ^^^^^^^^^^^^^^^^^^
 
-This state will install DBeaver from binary on Windows (part implemented).
+This state will install DBeaver from archive on Windows (part implemented).
 
 ``dbeaver.macapp``
 ^^^^^^^^^^^^^^^^^^
@@ -82,7 +82,7 @@ this state will undo everything performed in the ``dbeaver`` meta-state in rever
 
 This state will remove DBeaver package on MacOS (homebrew), Debian, and GNU/Linux (snap).
 
-``dbeaver.binary.clean``
+``dbeaver.archive.clean``
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 This state will remove DBeaver package on Windows (part implemented).
