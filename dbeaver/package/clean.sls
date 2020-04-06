@@ -3,7 +3,7 @@
 
 {#- Get the `tplroot` from `tpldir` #}
 {%- set tplroot = tpldir.split('/')[0] %}
-{%- from tplroot ~ "/jinja/map.jinja" import dbeaver with context %}
+{%- from tplroot ~ "/map.jinja" import dbeaver with context %}
 
     {%- if grains.os_family == 'Debian' and dbeaver.pkg.use_upstream_repo %}
 

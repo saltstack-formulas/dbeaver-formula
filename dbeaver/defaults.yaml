@@ -18,10 +18,10 @@ dbeaver:
     repo: {}
     macapp:
       uri: https://github.com/dbeaver/dbeaver/releases/download
-      tag: '-macos'
+      tag: 'macos'
     archive:
       uri: https://github.com/dbeaver/dbeaver/releases/download
-      tag: '-linux.gtk'
+      tag: 'linux.gtk'
       source_hash: adfee928e9637e1522586ae6adf11d680e8f82a31db7cb4a2fb13c9bf49ee55c
       enforce_toplevel: false
       trim_output: true

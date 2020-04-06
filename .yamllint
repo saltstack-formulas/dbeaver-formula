@@ -12,7 +12,7 @@ ignore: |
   node_modules/
   test/**/states/**/*.sls
   .kitchen/
-  dbeaver/yaml/osfamilymap.yaml
+  dbeaver/osfamilymap.yaml
   pillar.example
 
 yaml-files:

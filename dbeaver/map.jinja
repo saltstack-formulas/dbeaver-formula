@@ -2,8 +2,8 @@
 # vim: ft=jinja
 
 {%- set tplroot = tpldir.split('/')[0] %}
-{%- import_yaml tplroot ~ "/yaml/defaults.yaml" as default_settings %}
-{%- import_yaml tplroot ~ "/yaml/osfamilymap.yaml" as osfamilymap %}
+{%- import_yaml tplroot ~ "/defaults.yaml" as default_settings %}
+{%- import_yaml tplroot ~ "/osfamilymap.yaml" as osfamilymap %}
 
 {%- set _config = salt['config.get'](tplroot, default={}) %}
 {%- set defaults = salt['grains.filter_by'](
@@ -19,11 +19,11 @@
 
 {%- if dbeaver.pkg.use_upstream_macapp %}
     {%- set dir = '%s-%s-%s'|format(dbeaver.pkg.name, dbeaver.version, dbeaver.pkg.archive.tag) %}
-    {%- do dbeaver.pkg.macapp.update({'source': '%s/%s.%s'|format(dbeaver.pkg.macapp.uri, dir, dbeaver.pkg.suffix)}) %}
+    {%- do dbeaver.pkg.macapp.update({'source': '%s/%s/%s.%s'|format(dbeaver.pkg.macapp.uri, dbeaver.version,dir, dbeaver.pkg.suffix)}) %}
 {%- endif %}
 
 {%- if dbeaver['pkg']['use_upstream_archive'] %}
     {%- set dir = '%s-%s-%s'|format(dbeaver.pkg.name, dbeaver.version, dbeaver.pkg.archive.tag) %}
     {%- do dbeaver.pkg.archive.update({'name': dbeaver.dir.archive + '/' + dir,
-           'source': '%s/%s.%s.%s'|format(dbeaver.pkg.macapp.uri, dir, grains.osarch, dbeaver.pkg.suffix)}) %}
+           'source': '%s/%s/%s.%s.%s'|format(dbeaver.pkg.macapp.uri, dbeaver.version, dir,  grains.osarch, dbeaver.pkg.suffix)}) %}
 {%- endif %}

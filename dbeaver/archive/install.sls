@@ -2,8 +2,8 @@
 # vim: ft=sls
 
 {%- set tplroot = tpldir.split('/')[0] %}
-{%- from tplroot ~ "/jinja/map.jinja" import dbeaver with context %}
-{%- from tplroot ~ "/jinja/macros.jinja" import format_kwargs with context %}
+{%- from tplroot ~ "/map.jinja" import dbeaver with context %}
+{%- from tplroot ~ "/macros.jinja" import format_kwargs with context %}
 
 dbeaver-package-archive-install-extract:
   pkg.installed:
