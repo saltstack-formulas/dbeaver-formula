@@ -20,6 +20,7 @@ dbeaver-package-install-pkg-installed:
 dbeaver-package-install-cmd-run-cask:
   cmd.run:
     - name: brew cask install {{ dbeaver.pkg.name }}
+    - runas: {{ dbeaver.rootuser }}
     - onlyif: test -x /usr/local/bin/brew
 
     {%- elif grains.kernel|lower == 'linux' %}

@@ -20,6 +20,7 @@ dbeaver-package-remove-pkg-removed:
 dbeaver-package-remove-cmd-run-cask:
   cmd.run:
     - name: brew cask remove {{ dbeaver.pkg.name }}
+    - runas: {{ dbeaver.rootuser }}
     - onlyif: test -x /usr/local/bin/brew
 
     {%- elif grains.kernel|lower == 'linux' %}

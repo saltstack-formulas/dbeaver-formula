@@ -4,7 +4,7 @@
 {%- set tplroot = tpldir.split('/')[0] %}
 {%- from tplroot ~ "/map.jinja" import dbeaver with context %}
 
-dbeaver-cli-package-archive-clean-file-absent:
+dbeaver-package-archive-clean-file-absent:
   file.absent:
     - names:
       - {{ dbeaver.pkg.archive.name }}
