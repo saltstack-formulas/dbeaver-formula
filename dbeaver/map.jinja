@@ -21,7 +21,7 @@
 {%- set dbeaver = salt['grains.filter_by']( {'defaults': defaults}, default='defaults', merge=_config) %}
 
 {%- if dbeaver.pkg.use_upstream_macapp %}
-    {%- set dir = '%s-%s-%s'|format(dbeaver.pkg.name, dbeaver.version, dbeaver.pkg.archive.tag) %}
+    {%- set dir = '%s-%s-%s'|format(dbeaver.pkg.name, dbeaver.version, dbeaver.pkg.macapp.tag) %}
     {%- do dbeaver.pkg.macapp.update({'source': '%s/%s/%s.%s'|format(dbeaver.pkg.macapp.uri, dbeaver.version,dir, dbeaver.pkg.suffix)}) %}
 {%- endif %}
 
@@ -29,5 +29,5 @@
     {%- set dir = '%s-%s-%s'|format(dbeaver.pkg.name, dbeaver.version, dbeaver.pkg.archive.tag) %}
     {%- do dbeaver.config.update({'path': dbeaver.dir.archive + '/' + dir }) %},
     {%- do dbeaver.pkg.archive.update({'name': dbeaver.dir.archive + '/' + dir,
-           'source': '%s/%s/%s.%s.%s'|format(dbeaver.pkg.macapp.uri, dbeaver.version, dir,  dbeaver.arch, dbeaver.pkg.suffix)}) %}
+           'source': '%s/%s/%s.%s.%s'|format(dbeaver.pkg.archive.uri, dbeaver.version, dir,  dbeaver.arch, dbeaver.pkg.suffix)}) %}
 {%- endif %}
