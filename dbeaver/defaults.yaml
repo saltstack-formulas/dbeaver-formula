@@ -5,6 +5,7 @@ dbeaver:
   version: 7.0.2
   rootuser: root
   rootgroup: root
+  command: /bin/dbeaver
   dir:
     tmp: /tmp/dbeaver
     archive: /usr/local
@@ -39,3 +40,6 @@ dbeaver:
     until: true
     interval: 10
     splay: 10
+  linux:
+    altpriority: 0
+    symlink: /usr/local/bin/dbeaver

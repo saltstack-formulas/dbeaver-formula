@@ -19,7 +19,7 @@ dbeaver-macos-app-install-curl:
     - require:
       - file: dbeaver-macos-app-install-curl
       - pkg: dbeaver-macos-app-install-curl
-    - retry: {{ dbeaver.retry_option }}
+    - retry: {{ dbeaver.retry_option|json }}
 
       # Check the hash sum. If check fails remove
       # the file to trigger fresh download on rerun
