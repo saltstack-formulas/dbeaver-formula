@@ -7,10 +7,7 @@
 
 dbeaver-package-archive-install-extract:
   pkg.installed:
-    - names:
-      - curl
-      - tar
-      - gzip
+    - names: {{ dbeaver.pkg.deps|json }}
   file.directory:
     - name: {{ dbeaver.pkg.archive.name }}
     - user: {{ dbeaver.rootuser }}

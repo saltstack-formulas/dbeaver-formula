@@ -14,6 +14,9 @@ dbeaver:
   environ_file: /etc/default/dbeaver.sh
   pkg:
     name: dbeaver-ce
+    deps:
+      - curl
+      - gzip
     use_upstream_repo: false
     use_upstream_archive: true
     use_upstream_source: false
