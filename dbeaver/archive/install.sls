@@ -3,7 +3,7 @@
 
 {%- set tplroot = tpldir.split('/')[0] %}
 {%- from tplroot ~ "/map.jinja" import dbeaver with context %}
-{%- from tplroot ~ "/macros.jinja" import format_kwargs with context %}
+{%- from tplroot ~ "/files/macros.jinja" import format_kwargs with context %}
 
 dbeaver-package-archive-install-extract:
   pkg.installed:
