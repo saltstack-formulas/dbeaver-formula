@@ -5,6 +5,7 @@ dbeaver:
   version: 7.0.2
   rootuser: root
   rootgroup: root
+  command: /bin/dbeaver
   dir:
     tmp: /tmp/dbeaver
     archive: /usr/local
@@ -14,6 +15,9 @@ dbeaver:
   environ_file: /etc/default/dbeaver.sh
   pkg:
     name: dbeaver-ce
+    deps:
+      - curl
+      - gzip
     use_upstream_repo: false
     use_upstream_archive: true
     use_upstream_source: false
@@ -36,3 +40,6 @@ dbeaver:
     until: true
     interval: 10
     splay: 10
+  linux:
+    altpriority: 0
+    symlink: /usr/local/bin/dbeaver

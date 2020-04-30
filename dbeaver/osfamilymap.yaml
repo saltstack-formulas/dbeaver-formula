@@ -33,7 +33,7 @@ Debian:
 Windows:
   pkg:
     archive:
-      tag: 'win32.win32'
+      tag: win32
       source_hash: 25fae15fb6ec16c9e4b29ff1afb95a1757a9a849da1c47bb1e55337c05580430
 
 MacOS:
@@ -47,4 +47,4 @@ MacOS:
       tag: 'macosx.cocoa'
     macapp:    # dbeaver-ce-VERSION-macos.dmg
       source_hash: 9a2d0c0547e6b11468aec067cb33ee4c19b2fa2a5b2d637f11cd7b291a70fa92
-      tag: 'macos'
+      tag: macos
