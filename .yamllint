@@ -5,7 +5,7 @@
 extends: default
 
 # Files to ignore completely
-# 1. All YAML files under directory `dbeaver_modules/`, introduced during the Travis run
+# 1. All YAML files under directory `node_modules/`, introduced during the Travis run
 # 2. Any SLS files under directory `test/`, which are actually state files
 # 3. Any YAML files under directory `.kitchen/`, introduced during local testing
 ignore: |
@@ -13,7 +13,6 @@ ignore: |
   test/**/states/**/*.sls
   .kitchen/
   dbeaver/osfamilymap.yaml
-  pillar.example
 
 yaml-files:
   # Default settings
