@@ -47,7 +47,7 @@ Available states
    :local:
 
 ``dbeaver``
-^^^^^^^^^^^
+^^^^^^^^^
 
 *Meta-state (This is a state that includes other states)*.
 
@@ -56,39 +56,39 @@ manages DBeaver configuration file and then
 starts the associated dbeaver service.
 
 ``dbeaver.package``
-^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^
 
 This state will install DBeaver package on MacOS (homebrew), Debian (repo) and GNU/Linux (snap).
 
 ``dbeaver.archive``
-^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^
 
 This state will install DBeaver from archive on Windows (part implemented).
 
 ``dbeaver.macapp``
-^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^
 
 This state will install DBeaver macpackage on MacOS.
 
 ``dbeaver.clean``
-^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^
 
 *Meta-state (This is a state that includes other states)*.
 
 this state will undo everything performed in the ``dbeaver`` meta-state in reverse order.
 
 ``dbeaver.package.clean``
-^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
 
 This state will remove DBeaver package on MacOS (homebrew), Debian, and GNU/Linux (snap).
 
 ``dbeaver.archive.clean``
-^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
 
 This state will remove DBeaver package on Windows (part implemented).
 
 ``dbeaver.macapp.clean``
-^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^
 
 This state will remove DBeaver macpackage on MacOS.
 
