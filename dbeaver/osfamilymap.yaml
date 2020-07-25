@@ -41,7 +41,8 @@ MacOS:
   rootgroup: {{ macos_rootgroup | d('') }}
   environ_file: /etc/defaults/dbeaver.sh
   pkg:
-    name: dbeaver-community   # brew cask name
+    brewname: dbeaver-community   # brew cask name
+    suffix: dmg
     archive:
       source_hash: 49230c1fcae85b0c058155798fd5f4d771e9b8a53080713494bdd295d962e310 
       tag: 'macosx.cocoa'
