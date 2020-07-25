@@ -9,7 +9,8 @@ dbeaver:
   dir:
     tmp: /tmp/dbeaver
     archive: /usr/local
-  config: {}
+  config:
+    path: null
   environ:
     - dummy=dummy
   environ_file: /etc/default/dbeaver.sh
